@@ -1,0 +1,56 @@
+---
+title: "Interential Statistics Project - Part 2"
+author: "Mauricio Noris Freire"
+date: "November 21, 2015"
+output: pdf_document
+---
+
+## Loading the ToothGrowth database
+
+```{r, echo=TRUE}
+
+data(ToothGrowth)
+str(ToothGrowth)
+
+
+```
+
+### Documentation 
+According with the documentation, the dataset correspondes of the response is the length of odontoblasts (teeth) in each of 10 guinea pigs at each of three dose levels of Vitamin C (0.5, 1, and 2 mg) with each of two delivery methods (orange juice or ascorbic acid). 
+
+#### Format
+
+A data frame with 60 observations on 3 variables. 
+
+[,1]  len  numeric  Tooth length 
+[,2]  supp  factor  Supplement type (VC or OJ). 
+[,3]  dose  numeric  Dose in milligrams.  
+
+
+## Provide a basic summary of the data.
+
+
+```{r, echo=TRUE}
+
+summary(ToothGrowth)
+
+```
+
+
+## Confidence intervals and/or hypothesis tests to compare tooth growth by supp and dose. 
+
+
+```{r, echo=TRUE}
+
+boxplot(  len~supp*dose
+        , data=ToothGrowth
+        , notch=FALSE
+        , col=(c("gold","darkgreen"))
+        , main="Tooth Growth"
+        , xlab="Suppliment and Dose")
+
+```
+
+## State your conclusions and the assumptions needed for your conclusions. 
+
+There is a correlation between the dosage and the tooth size and the orange juice is more effective than ascorbic acid for small dosages and almost the same effect for the biggest dosage.
