@@ -1,0 +1,30 @@
+  ##Plot 2
+
+  ## Change it to the corret path of your working directory
+  wd <- "C:\\Users\\mfreire\\Documents\\BigData\\Coursera\\WD\\Assignments\\ExploratoryDataAnalysis"
+  setwd(wd)
+  
+  ## Assuming that the dataset is in a directory Data inside of your working directory
+  sourceFile <- ".\\data\\household_power_consumption.txt"
+  
+  ## read the dataset
+  data <- read.table(sourceFile, header = TRUE
+                               , sep = ";"
+                               , dec = "."
+                               , na.strings = c("?"))
+                               
+  data$Date <- as.Date(data$Date, format="%d/%m/%Y") ##Change the field to Date type
+  filteredData <- data[data$Date  %in% as.Date(c("01/02/2007","02/02/2007"),format = "%d/%m/%Y"),] ##Filter the date
+  
+  rm(data) ##releases memory
+  
+  filteredData["DateTime"] <- as.POSIXct(paste(filteredData$Date, filteredData$Time), format="%Y-%m-%d %H:%M:%S")  
+  
+  ## generates the plot
+  png(file="plot2.png")
+  plot(filteredData$DateTime, filteredData$Global_active_power, type="l",xlab="",  ylab="Global Active Power(kilowatts)", cex.lab=0.9, cex.axis=0.9)
+  dev.off()
+  rm(list=ls()) ##releases memory
+
+  
+
