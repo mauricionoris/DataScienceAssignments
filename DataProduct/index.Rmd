@@ -1,0 +1,39 @@
+---
+title: "index"
+author: "Mauricio Noris Freire"
+date: "April 13, 2016"
+output: html_document
+runtime: shiny
+resource_files:
+- app/ui.R
+- app/server.R
+- app/Data/CADASTRO_MATRICULAS_REGIAO_SUDESTE_SP_2012.csv
+---
+
+This R Markdown document is made interactive using Shiny. Unlike the more traditional workflow of creating static reports, you can now create documents that allow your readers to change the assumptions underlying your analysis and see the results immediately. 
+
+To learn more, see [Interactive Documents](http://rmarkdown.rstudio.com/authoring_shiny.html).
+
+## Inputs and Outputs
+
+
+The source file was obtained at this address: "http: //repositorio.dados.gov.br/educacao/"
+
+## Private Schools in the state of Sao Paulo/Brazil  
+
+This (proof of concept) tool makes possible to get some information and the location pointed in a map of the private schools. Future releases will improve the interface and will allow finding information about schools on another locations.
+
+Just select the city and the zip code.
+
+
+```{r, echo=FALSE}
+shinyAppDir("./app",
+  options=list(
+    width="100%", height=800
+  )
+)
+```
+
+
+
+
