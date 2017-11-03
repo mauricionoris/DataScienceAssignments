@@ -21,7 +21,7 @@ will be add to this like a better interface as well allowing
 to see schools on others brazilian states.
 
 - app link: https://mauricionoris.shinyapps.io/DataProduct/
-- github: https://github.com/mauricionoris/DataScienceAssignments/DataProduct/
+- github: https://github.com/mauricionoris/DataScienceAssignments
 
 The use of ggmap package
 ========================================================
